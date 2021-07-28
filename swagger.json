@@ -1,0 +1,394 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "User-Hobbies",
+      "description": "User-Hobbies Api documentation.",
+      "version": "0.1.9"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5555"
+      }
+    ],
+    "components": {
+    },
+    "paths": {
+      "/user/create": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "summary": "User Create",
+          "description": "Create new User",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User created.",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "/user/update": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "summary": "Update User",
+          "description": "User can be updated",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User Updated",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      },
+      "/user": {
+        "get": {
+          "tags": [
+            "User"
+          ],
+          "summary": "Get All User list",
+          "description": "Get all User List",
+          "produces": "application/json",
+          "responses": {
+            "200": {
+              "description": "User list",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      },
+      "/user/delete": {
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "summary": "Delete User",
+          "description": "Delete user",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "required": true
+                    }                    
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User removed",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      },
+      "/hobby/create": {
+        "post": {
+          "tags": [
+            "Hobby"
+          ],
+          "summary": "Create Hobby",
+          "description": "Create hobby for user",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "required": true
+                    },
+                    "year": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "passionLevel": {
+                        "type": "string",
+                        "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Hobby Created",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      },
+      "/hobby/update": {
+        "post": {
+          "tags": [
+            "Hobby"
+          ],
+          "summary": "Update Hobby",
+          "description": "Hobby can be updated",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "required": true
+                    },
+                    "year": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "passionLevel": {
+                        "type": "string",
+                        "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Hobby updated successfully",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      },
+      "/hobby/delete": {
+        "post": {
+          "tags": [
+            "Hobby"
+          ],
+          "summary": "Delete Hobby",
+          "description": "Delete Hobby from user",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "string",
+                      "required": true
+                    },
+                    "userId": {
+                        "type": "string",
+                        "required": true
+                      }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "hobby removed from user",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      },
+      "/hobby": {
+        "post": {
+          "tags": [
+            "Hobby"
+          ],
+          "summary": "Get Hobbies for User",
+          "description": "Get Hobbies of particular User",
+          "produces": "application/json",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Hobbies of User",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "400": {
+              "description": "Error: Bad Request",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "500": {
+              "description": "Internal server error.",
+              "schema": {
+                "type": "object"
+              }
+            }
+          }          
+        }
+      }                 
+    }
+  }
