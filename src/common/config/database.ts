@@ -1,7 +1,5 @@
 import moongoose from "mongoose";
-
 let database: moongoose.Connection;
-
 
 export const connectDB = () => {
   const uri = 'mongodb://localhost:27017/userhobbies'; 
@@ -15,7 +13,8 @@ export const connectDB = () => {
     useCreateIndex: true,
   });
   
-  database = moongoose.connection;  database.once("open", async () => {
+  database = moongoose.connection;
+  database.once("open", async () => {
     console.log("Connected to database");
   });  
 
